@@ -1,9 +1,11 @@
-# The function ReducedForms(D) below computes all reduced binary quadratic forms of the negative discriminant D
+# The function ReducedForms(D) below computes all 'reduced' positive definite binary quadratic forms of the negative discriminant D
 
 from math import sqrt
 
 def IsEven(m):
     return not m%2
+
+# As the next function indicates: We also allow non-primitive forms
 
 def IsFundamental(D):
     if D%4 == 0 or D%4 ==1:
@@ -11,7 +13,7 @@ def IsFundamental(D):
     else:
         return False
 
-# I am curious: Are there more efficient versions of the following function?
+# I am curious: Are there more efficient versions of the following function which computes a list of all divisors of a given number m
 
 def ListDivisors(m):               
     outl,outr = [],[]
@@ -22,6 +24,7 @@ def ListDivisors(m):
             if number != i:
                 outr = [number] + outr
     return outl + outr
+
 
 # The algorithm used in the main function goes back to C.F. Gauss. It is beautifully explained f.e. in the book "A Brief Guide to Algebraic Number Theory" by H.P.F. Swinnerton-Dyer
 
@@ -49,6 +52,5 @@ def ReducedForms(D):
 
 for i in range(-1000,0):
     if IsFundamental(i):
-        forms=ReducedForms(i)
-        if len(forms)==1:
-            print i, " Corresponding reduced form: ",forms[0]
+        if len(ReducedForms(i))==1:
+            print i
