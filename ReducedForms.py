@@ -13,7 +13,7 @@ def IsFundamental(D):
     else:
         return False
 
-# I am curious: Are there more efficient versions of the following function which computes a list of all divisors of a given number m
+# Lets compute quickly a list of divisors of a number m
 
 def ListDivisors(m):               
     outl,outr = [],[]
