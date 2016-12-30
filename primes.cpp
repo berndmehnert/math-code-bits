@@ -15,7 +15,7 @@ typedef struct DLLNode
 	DLLNode *lNode;
 	DLLNode *rNode;
 	int Data;
-}DllNode;
+}DLLNode;
 
 /* Function 'primes':
  * Input: An integer n => 2.
