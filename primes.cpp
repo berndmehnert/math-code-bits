@@ -73,7 +73,6 @@ vector<int>  primes(int n)
 	};
 
 	run = first;
-	int counter = 0;
 	vector<int> output;
 
 	while (run != NULL) 
